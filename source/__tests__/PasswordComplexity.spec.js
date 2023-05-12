@@ -6,6 +6,11 @@ describe('Password complexity tests', () => {
         expect(complexity).toEqual(PasswordComplexityValues.EXCELLENT)
     })
 
+    it('should has at least 2 numbers', () => {
+        const complexity = calculateComplexity('password3')
+        expect(complexity).toEqual(PasswordComplexityValues.GOOD)
+    })
+
     it('should be good', () => {
         const complexity = calculateComplexity('password')
         expect(complexity).toEqual(PasswordComplexityValues.GOOD)
